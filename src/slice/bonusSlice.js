@@ -12,7 +12,7 @@ export const bonusSlice = createSlice({
       state.points += 1
     }
   },
-  extraReducers:(builder)=>{
+  extraReducers:(builder)=>{//here we add extra reducer to increase bonus points of amountbypoint reducer playload has greater than 100 value 
     builder.addCase(incrementByAmount,(state,action)=>{
       if(action.payload >=1000){
         state.points +=1

@@ -14,7 +14,8 @@ export function App() {
     <>
       <div className="APP mx-auto">
         <h4 className="text-2xl font-bold mb-4"> App</h4>
-{acount.pending?<p></p>: <h3 className="text-2xl font-bold mb-4">amount acount: {amount}</h3>}
+        {acount.pending?(<p>loading....</p>):(acount.error?<p>error come</p>:<h3 className="text-2xl font-bold mb-4">amount acount: {amount}</h3>) }
+
        
         <h3 className="text-2xl font-bold mb-4">points bonus:{points} </h3>
         <h3 className="text-2xl font-bold mb-4"> reward:{reward} </h3>

@@ -8,7 +8,6 @@ export const AccountComponent = () => {
   const [value,setValue]= useState(0)
   const amount = useSelector(state=>state.acount.amount)
   const points = useSelector(state=>state.bonus.points)
-  
    const dispatch =useDispatch()
 
   
@@ -29,7 +28,7 @@ export const AccountComponent = () => {
         <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2" onClick={()=>dispatch(incrementByAmount(value))}>
           Increment By +{value}
         </button>
-        <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2" onClick={()=>dispatch(getUserAcount(1))} > getuser amount</button>
+        <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2" onClick={()=>dispatch(getUserAcount(13))} > getuser amount</button>
         
       </div>
     );

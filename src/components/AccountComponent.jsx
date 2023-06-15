@@ -1,6 +1,6 @@
 import {useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment, incrementByAmount } from "../slice/accountSlice";
+import { decrement, getUserAcount, increment, incrementByAmount } from "../slice/accountSlice";
 // import { useSelector } from "react-redux";
 // import { decrement, increment } from "../slice/accountSlice";
 
@@ -29,7 +29,8 @@ export const AccountComponent = () => {
         <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2" onClick={()=>dispatch(incrementByAmount(value))}>
           Increment By +{value}
         </button>
-        <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2" > init amount</button>
+        <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2" onClick={()=>dispatch(getUserAcount(1))} > getuser amount</button>
+        
       </div>
     );
   };

@@ -1,8 +1,16 @@
-import {  createSlice } from '@reduxjs/toolkit'
+import {  createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import axios from 'axios'
 
 const initialState = {
   amount: 1,
 }
+// action creater get user data from api 
+export const getUserAcount = createAsyncThunk('acount/getUser',
+  async(userId,thunkApi)=>{
+    const {data} = await axios.get(`http://localhost:3000/account/${userId}`)
+    return data.amount 
+}
+)
 
 export const accountSlice = createSlice({
 
@@ -18,14 +26,11 @@ export const accountSlice = createSlice({
     incrementByAmount: (state, action) => {
       state.amount += action.payload
     },
-    amountUserAcount: (state, action) => {
-      async(dispatch,getState)=>{
-
-      }
-      state.amount += action.payload
-    },
+  },extraReducers:(builder)=>{
+    builder.addCase(getUserAcount.fulfilled,(state,action)=>{
+      state.amount = action.payload +=action.payload  //here we change the acount amoutn previous value to api-amoutn value
+    })
   }
-
 })
 
 // Action creators are generated for each case reducer function

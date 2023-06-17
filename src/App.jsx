@@ -2,6 +2,7 @@ import { useSelector } from "react-redux"
 import { AccountComponent } from "./components/AccountComponent"
 import {BonusComponent} from './components/BonusComponent'
 import { RewardComponent } from "./components/RewardComponent"
+import { AdminComponent } from "./components/Admin"
 
 
 export function App() {
@@ -14,7 +15,7 @@ export function App() {
     <>
       <div className="APP mx-auto">
         <h4 className="text-2xl font-bold mb-4"> App</h4>
-        {acount.pending?(<p>loading....</p>):(acount.error?<p>error come</p>:<h3 className="text-2xl font-bold mb-4">amount acount: {amount}</h3>) }
+        {acount.pending?(<p>loading....</p>):(acount.error?<p>acount.error.message </p>:<h3 className="text-2xl font-bold mb-4">amount acount: {amount}</h3>) }
 
        
         <h3 className="text-2xl font-bold mb-4">points bonus:{points} </h3>
@@ -23,6 +24,7 @@ export function App() {
           <AccountComponent />
            <BonusComponent /> 
            <RewardComponent /> 
+           <AdminComponent /> 
         </div>
       </div>
     </>

@@ -14,7 +14,8 @@ export const adminApi = createApi({
       query:(amount,id)=>({
         url:'account',
         method:'POST',
-        body:{amount:amount,id:id}}),
+        body:{amount,id}
+      }),
         invalidatesTags:['account']
     }),
     deleteAccount:builder.mutation({
